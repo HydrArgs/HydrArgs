@@ -1,0 +1,522 @@
+[{
+		"name": "dummy",
+		"license": "Unlicense",
+		"export_name": [],
+		"lib_name": [],
+		"caps": [],
+		"doc": "for testing purposes"
+	},
+	{
+		"name": "CLI11",
+		"license": "BSD-3-Clause",
+		"repo": "https://github.com/CLIUtils/CLI11",
+		"export_name": [
+			"CLI11"
+		],
+		"lib_name": [
+			"CLI11::CLI11"
+		],
+		"caps": [
+			"USAGE",
+			"HELP",
+			"DESCR",
+			"POSITIONAL_MANDATORY",
+			"POSITIONAL_OPTIONAL",
+			"POSITIONAL_OPTIONAL_BEFORE_MANDATORY",
+			"POSITIONAL_BOOLEANS",
+			"DASHED_MANDATORY",
+			"DASHED_OPTIONAL",
+			"STABLE"
+		]
+	},
+	{
+		"name": "clipp",
+		"license": "MIT",
+		"repo": "https://github.com/muellan/clipp",
+		"export_name": [
+			"clipp"
+		],
+		"lib_name": [
+			"${PROJECT_NAME}_fallback_parsing"
+		],
+		"caps": [
+			"USAGE",
+			"HELP",
+			"DESCR",
+			"VALUE_NAME",
+			"POSITIONAL_MANDATORY",
+			"POSITIONAL_OPTIONAL",
+			"POSITIONAL_OPTIONAL_BEFORE_MANDATORY",
+			"DASHED_MANDATORY",
+			"DASHED_OPTIONAL",
+
+		]
+	},
+	{
+		"name": "Lyra",
+		"license": "BSD-3-Clause",
+		"repo": "https://github.com/bfgroup/Lyra",
+		"export_name": [
+			"lyra"
+		],
+		"lib_name": [
+			"bfg::lyra"
+		],
+		"caps": [
+			"ERROR_MESSAGE",
+			"USAGE",
+			"HELP",
+			"DESCR",
+			"VALUE_NAME",
+			"POSITIONAL_MANDATORY",
+			"POSITIONAL_OPTIONAL",
+			"POSITIONAL_BOOLEANS",
+			"DASHED_MANDATORY",
+			"DASHED_OPTIONAL"
+		]
+	},
+	{
+		"name": "Dropt",
+		"license": "BSD-3-Clause",
+		"repo": "https://github.com/jamesderlin/dropt",
+		"export_name": [
+			"dropt",
+			"droptxx"
+		],
+		"lib_name": [
+			"dropt::dropt",
+			"dropt::droptxx",
+			"${PROJECT_NAME}_fallback_errors",
+			"${PROJECT_NAME}_fallback_parsing",
+			"${PROJECT_NAME}_fallback_positional"
+		],
+		"caps": [
+			"ERROR_MESSAGE",
+			"HELP",
+			"VALUE_NAME",
+			"DASHED_OPTIONAL",
+			"PATH_VALIDATION"
+		],
+		"bugs": [
+			{
+				"descr": "It doesn't implement positional args",
+				"link": "https://github.com/jamesderlin/dropt/issues/8"
+			},
+			{
+				"descr": "it doesn't implement mandatory args",
+				"link": "https://github.com/jamesderlin/dropt/issues/9",
+				"rejected": true
+			},
+			{
+				"descr": "we have some code we can upstream implementing the rudimentary support for non-mandatory positional, mandatory positional and mandatory dashed args."
+			},
+			{
+				"descr": "It also have very weird API. `.arg_description` must be decoupled from `--aaa=<value>` and `--aaa <value>` support."
+			}
+		]
+	},
+	{
+		"name": "QCommandLine",
+		"license": "LGPL-2.0",
+		"repo": "https://github.com/qt/qtbase",
+		"export_name": [
+			"Qt@Core"
+		],
+		"packages": {
+			"deb": ["libqt${Qt_VERSION_MAJOR}core${Qt_VERSION_MAJOR}a"]
+		},
+		"lib_name": [
+			"Qt::Core",
+			"${PROJECT_NAME}_fallback_errors",
+			"${PROJECT_NAME}_fallback_parsing",
+			"${PROJECT_NAME}_fallback_positional"
+		],
+		"caps": [
+			"ERROR_MESSAGE",
+			"USAGE",
+			"HELP",
+			"DESCR",
+			"VALUE_NAME",
+			"POSITIONAL_MANDATORY",
+			"POSITIONAL_OPTIONAL",
+			"DASHED_MANDATORY",
+			"DASHED_OPTIONAL"
+		]
+	},
+	{
+		"name": "LeanAndMean",
+		"license": "MIT",
+		"repo": "https://github.com/HydrArgs/LeanAndMeanOptionParser",
+		"export_name": [
+			"optionparser"
+		],
+		"lib_name": [
+			"mbenkmann::optionparser",
+			"${PROJECT_NAME}_fallback_errors",
+			"${PROJECT_NAME}_fallback_parsing",
+			"${PROJECT_NAME}_fallback_positional"
+		],
+		"caps": [
+
+		]
+	},
+	{
+		"name": "ezOptionParser",
+		"license": "MIT",
+		"repo": "https://github.com/HydrArgs/ezOptionParser",
+		"export_name": [
+			"ezOptionParser"
+		],
+		"lib_name": [
+			"ezOptionParser::ezOptionParser",
+			"${PROJECT_NAME}_fallback_errors",
+			"${PROJECT_NAME}_fallback_parsing",
+			"${PROJECT_NAME}_fallback_positional"
+		],
+		"caps": []
+	},
+	{
+		"name": "cxxopts",
+		"license": "MIT",
+		"repo": "https://github.com/jarro2783/cxxopts",
+		"export_name": [
+			"cxxopts"
+		],
+		"lib_name": [
+			"cxxopts::cxxopts",
+			"${PROJECT_NAME}_fallback_errors"
+		],
+		"caps": [
+			"ERROR_MESSAGE",
+			"USAGE",
+			"HELP",
+			"DESCR",
+			"POSITIONAL_MANDATORY",
+			"POSITIONAL_OPTIONAL",
+			"POSITIONAL_OPTIONAL_BEFORE_MANDATORY",
+			"POSITIONAL_BOOLEANS",
+			"DASHED_MANDATORY",
+			"DASHED_OPTIONAL",
+			"AUTO_COMPLETE"
+		],
+		"bugs": [
+			{
+				"descr": "`m_positional` is overridden (not appended) on every `app.parse_positional` (this function adds positional arguments). There is no way to only append element there.",
+				"link": "https://github.com/jarro2783/cxxopts/issues/300"
+			},
+			{
+				"descr": "There is no way to remove an element from `m_positional_set`.",
+				"link": "https://github.com/jarro2783/cxxopts/issues/301"
+			}
+		]
+	},
+	{
+		"name": "octargs",
+		"license": "MIT",
+		"repo": "https://github.com/saveman/octargs",
+		"export_name": ["octargs"],
+		"lib_name": ["octargs::octargs"],
+		"caps": [
+			"USAGE",
+			"HELP",
+			"DESCR",
+			"POSITIONAL_MANDATORY",
+			"POSITIONAL_OPTIONAL",
+			"POSITIONAL_OPTIONAL_BEFORE_MANDATORY",
+			"POSITIONAL_BOOLEANS",
+			"DASHED_MANDATORY",
+			"DASHED_OPTIONAL"
+		]
+	},
+	{
+		"name": "TCLAP",
+		"license": "MIT",
+		"repo": "https://git.code.sf.net/p/tclap/code",
+		"disableReason": "OptionalUnlabeledTracker is the global state depending on the order of calling ctors rather than on order of inserting them int the class",
+		"export_name": ["TCLAP"],
+		"lib_name": [],
+		"caps": [
+			"ERROR_MESSAGE",
+			"USAGE",
+			"HELP",
+			"DESCR",
+			"VALUE_NAME",
+			"VALUE_UNIT",
+			"POSITIONAL_MANDATORY",
+			"POSITIONAL_OPTIONAL",
+			"DASHED_MANDATORY",
+			"DASHED_OPTIONAL",
+			"BUG_GRAVE_OTHER"
+		],
+		"bugs": [{
+			"descr": "`OptionalUnlabeledTracker` in `UnlabeledValueArg.h` is a singleton introducing global state rather than the one bound to `CmdLine`. See the link and Bugs.md",
+			"link": "https://sourceforge.net/p/tclap/bugs/34/",
+		}]
+	},
+	{
+		"name": "BoostArgs",
+		"license": "BSL-1.0",
+		"repo": "https://github.com/boostorg/program_options",
+		"disableReason": "Seems to be incompatible to chaining - `allow_unregistered` doesn't work.",
+		"export_name": [
+			"Boost@program_options"
+		],
+		"lib_name": [
+			"Boost::program_options",
+			"${PROJECT_NAME}_fallback_errors"
+		],
+		"packages": {
+			"deb": ["libboost-program-options${Boost_VERSION}"]
+		},
+		"caps": [
+			"ERROR_MESSAGE",
+			"USAGE",
+			"HELP",
+			"VALUE_NAME",
+			"POSITIONAL_MANDATORY",
+			"POSITIONAL_OPTIONAL",
+			"POSITIONAL_BOOLEANS",
+			"DASHED_MANDATORY",
+			"DASHED_OPTIONAL"
+		],
+		"bugs": [{
+			"descr": "it seems that `allow_unregistered` doesn't work.",
+			"link": "https://github.com/boostorg/program_options/issues/113"
+		}]
+	},
+	{
+		"name": "Args",
+		"license": "MIT",
+		"repo": "https://github.com/Taywee/args",
+		"disableReason": "even compilation got broken. This backend is unfinished.",
+		"export_name": [
+			"args"
+		],
+		"lib_name": [
+			"taywee::args"
+		],
+		"caps": [
+			"ERROR_MESSAGE",
+			"USAGE",
+			"HELP",
+			"DESCR",
+			"VALUE_NAME",
+			"POSITIONAL_MANDATORY",
+			"POSITIONAL_OPTIONAL",
+			"POSITIONAL_OPTIONAL_BEFORE_MANDATORY",
+			"DASHED_MANDATORY",
+			"DASHED_OPTIONAL",
+			"AUTO_COMPLETE"
+		]
+	},
+	{
+		"name": "ArgParse",
+		"license": "MIT",
+		"repo": "https://github.com/p-ranav/argparse",
+		"disableReason": "LOT OF BUGS",
+		"export_name": [
+			"argparse"
+		],
+		"lib_name": [
+			"argparse::argparse",
+			"${PROJECT_NAME}_fallback_errors",
+			"${PROJECT_NAME}_fallback_parsing"
+		],
+		"caps": [
+			"ERROR_MESSAGE",
+			"USAGE",
+			"HELP",
+			"DESCR",
+			"POSITIONAL_MANDATORY",
+			"POSITIONAL_OPTIONAL_BEFORE_MANDATORY",
+			"DASHED_MANDATORY",
+			"DASHED_OPTIONAL",
+			"TERMINATES_ITSELF",
+			"PRINTS_ITSELF",
+			"NON_REENTRABLE"
+		],
+		"bugs": [{
+			"descr": "Non-reentrable.",
+			"link": "https://github.com/p-ranav/argparse/issues/141"
+		}]
+	},
+	{
+		"name": "Argh",
+		"license": "BSD-3-Clause",
+		"repo": "https://github.com/adishavit/argh",
+		"export_name": [
+			"argh"
+		],
+		"lib_name": [
+			"${PROJECT_NAME}_fallback_errors",
+			"${PROJECT_NAME}_fallback_parsing",
+			"${PROJECT_NAME}_fallback_positional"
+		],
+		"caps": [
+			"POSITIONAL_MANDATORY",
+			"POSITIONAL_OPTIONAL",
+			"POSITIONAL_OPTIONAL_BEFORE_MANDATORY",
+			"POSITIONAL_BOOLEANS",
+			"DASHED_MANDATORY",
+			"DASHED_OPTIONAL"
+		],
+		"bugs": [{
+			"descr": "Eats dashed arguments that are out of the spec, so they cannot be passed.",
+			"link": "https://github.com/adishavit/argh/issues/65"
+		}]
+	},
+	{
+		"name": "argtable3",
+		"license": "BSD-3-Clause AND BSD-2-Clause AND ISC",
+		"repo": "https://github.com/argtable/argtable3",
+		"disableReason": "unknown",
+		"export_name": [
+			"Argtable3"
+		],
+		"lib_name": [
+			"argtable3::argtable3",
+			"${PROJECT_NAME}_fallback_parsing"
+		],
+		"caps": [
+			"ERROR_MESSAGE",
+			"USAGE",
+			"HELP",
+			"VALUE_NAME",
+			"POSITIONAL_MANDATORY",
+			"POSITIONAL_OPTIONAL",
+			"POSITIONAL_OPTIONAL_BEFORE_MANDATORY",
+			"DASHED_MANDATORY",
+			"DASHED_OPTIONAL"
+		],
+		"bugs": [{
+			"descr": "Upload the fix of the mistake in my packaging (Debug build of the library is not discovered properly)",
+		}]
+	},
+	{
+		"name": "AnyOption",
+		"license": "MIT",
+		"repo": "https://github.com/hackorama/AnyOption",
+		"disableReason": "bugs",
+		"export_name": [
+			"anyoption"
+		],
+		"lib_name": [
+			"anyoption::anyoption",
+			"${PROJECT_NAME}_fallback_errors",
+			"${PROJECT_NAME}_fallback_parsing",
+			"${PROJECT_NAME}_fallback_positional"
+		],
+		"caps": [
+			"DASHED_OPTIONAL",
+			"BUG_MEMORY_SAFETY"
+		],
+		"bugs": [{
+				"descr": "Memory safety bugs (by now mitigated by zeroing pointers)",
+			},
+			{
+				"descr": "For option types macrodfs are used extensively",
+				"link": "https://github.com/hackorama/AnyOption/pull/34",
+			}
+		]
+	},
+	{
+		"name": "Sweet",
+		"license": "LGPL3",
+		"repo": "https://github.com/burner/sweet.hpp",
+		"disableReason": "doesn't support even splitting dashed/positional",
+		"export_name": [
+			"sweet"
+		],
+		"lib_name": [
+			"sweet::sweet",
+			"${PROJECT_NAME}_fallback_errors",
+			"${PROJECT_NAME}_fallback_parsing",
+			"${PROJECT_NAME}_fallback_positional"
+		],
+		"caps": [],
+		"bugs": [{
+			"descr": "Wrong order of defining/parsing. It requires argc and argv on construction of the parser, then definition of args, then parsing them."
+		}]
+	},
+	{
+		"name": "GetPot",
+		"license": "MIT",
+		"repo": "https://github.com/HydrArgs/getpot-cpp",
+		"disableReason": "Seems to be broken, I cannot find a string assigned to a nonmandatory arg using it.",
+		"export_name": [
+			"getpot"
+		],
+		"lib_name": [
+			"getpot::getpot",
+			"${PROJECT_NAME}_fallback_errors",
+			"${PROJECT_NAME}_fallback_parsing",
+			"${PROJECT_NAME}_fallback_positional"
+		],
+		"caps": []
+	},
+	{
+		"name": "ketopt",
+		"license": "MIT",
+		"repo": "https://github.com/KOLANICH/klib",
+		"disableReason": "unfinished",
+		"export_name": [
+			"klib"
+		],
+		"lib_name": [
+			"klib::klib"
+		],
+		"caps": []
+	},
+	{
+		"name": "getopt",
+		"license": "LGPL-2.0",
+		"repo": "https://sourceware.org/git/glibc.git",
+		"disableReason": "unknown",
+		"export_name": [
+			""
+		],
+		"lib_name": [
+			"${PROJECT_NAME}_fallback_errors",
+			"${PROJECT_NAME}_fallback_parsing",
+			"${PROJECT_NAME}_fallback_positional"
+		],
+		"caps": [
+			"POSITIONAL_OPTIONAL",
+			"DASHED_OPTIONAL",
+			"THREAD_UNSAFE"
+		]
+	},
+	{
+		"name": "SimpleOpt",
+		"license": "MIT",
+		"repo": "https://github.com/HydrArgs/simpleopt",
+		"disableReason": "broken. I have forgotten to refactor it. Though it was not very good.",
+		"export_name": [
+			"SimpleOpt"
+		],
+		"lib_name": [
+			"SimpleOpt::SimpleOpt"
+		],
+		"caps": []
+	},
+	{
+		"name": "dlib",
+		"license": "BSL-1.0",
+		"repo": "https://github.com/davisking/dlib",
+		"disableReason": "not sure that we need the fallbacks. Currently unfinished and broken. The impl is not reentrable",
+		"export_name": [
+			"dlib"
+		],
+		"lib_name": [
+			"dlib::dlib",
+			"${PROJECT_NAME}_fallback_errors",
+			"${PROJECT_NAME}_fallback_parsing",
+			"${PROJECT_NAME}_fallback_positional"
+		],
+		"caps": ["NON_REENTRABLE"],
+		"bugs": [{
+			"descr": "We cannot reuse the same objects without redoing the most of work on recreating it.",
+			"link": "https://github.com/davisking/dlib/issues/2421"
+		}]
+	}
+]

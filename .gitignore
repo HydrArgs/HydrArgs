@@ -1,0 +1,5 @@
+/build
+/build_gcc
+/build_clang
+/docs
+/CMakeLists.txt.user
